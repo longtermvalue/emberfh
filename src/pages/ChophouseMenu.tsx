@@ -134,10 +134,10 @@ export default function ChophouseMenu() {
                 marginBottom: '1rem',
               }}
             >
-              The Art of Fire & Aged Cuts
+              Now Open
             </h2>
-            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', maxWidth: '550px', margin: '0 auto', lineHeight: 1.7 }}>
-              All cuts are served simply, finished with sea salt. Sides available a la carte.
+            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', maxWidth: '680px', margin: '0 auto', lineHeight: 1.7 }}>
+              Ember's Chophouse is an upscale casual dining destination dedicated to the art of fire, featuring premium aged chops, fresh seafood, and daily chef-inspired features. Set against the stunning backdrop of Friday Harbour on the shores of Lake Simcoe, Ember delivers an elevated dining experience where exceptional food, warm hospitality, and waterfront views come together.
             </p>
           </div>
         </div>
@@ -234,7 +234,7 @@ export default function ChophouseMenu() {
 
         <div className="text-center mt-14">
           <a href={RESERVATION_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
-            Make a Reservation
+            Reserve Your Table Today
           </a>
         </div>
       </div>

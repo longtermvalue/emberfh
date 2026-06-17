@@ -3,10 +3,10 @@ import MenuTabNav from '../components/MenuTabNav';
 
 const RESERVATION_URL = 'https://www.opentable.ca/r/ember-reservations-innisfil?restref=1498666&lang=en-CA&ot_source=Restaurant%20website';
 
-type DrinkItem = { name: string; price?: string; description?: string; sub?: string };
-type Section = { category: string; items: DrinkItem[]; isWine?: boolean };
+type DrinkItem = { name: string; description?: string; sub?: string };
+type Section = { category: string; items: DrinkItem[] };
 
-const menuFooterNote = `Plus applicable tax and 3% resort fee as per resort management. Please address any known allergies or dietary restrictions with your server including Gluten-Free intolerances.`;
+const menuFooterNote = `All wines by the glass are 5oz pours. Vintages and availability subject to change.`;
 
 const wineDisclaimer = `Our wine program is intentionally dynamic, evolving with the seasons and guided by availability and quality. As such, selections may change without notice. We are proud to showcase a curated collection of exceptional Canadian and international wines.`;
 
@@ -14,107 +14,116 @@ const cocktailSections: Section[] = [
   {
     category: 'Cocktails',
     items: [
-      { name: 'Heated Rivalry', price: '$18', description: 'Hornitos Black Barrel Tequila, Cointreau, Japanese Yuzu, Lime, Agave, Fire Bitters' },
-      { name: 'Smoke & Oak', price: '$18', description: 'Buffalo Trace Bourbon, Licor 43, Smoked Dark Walnut Bitters, Fig & Cinnamon' },
-      { name: 'Basil Limoncello Smash', price: '$17', description: 'House Flavoured Basil Vodka, Luxardo Limoncello, Lemon, Sugar, Soda, Fresh Basil' },
-      { name: 'Spiced Tide', price: '$18', description: 'Empress Gin, Canton Ginger Liqueur, Pineapple, Lemon, Honey, Ginger Bitters' },
-      { name: 'Sun Over Sardinia', price: '$17', description: 'Gosling\'s Black Rum, Pineapple, Lemon, Coconut, Better Bitters' },
-      { name: 'Sicilian Negroni', price: '$18', description: 'Malfy Gin Con Arancia, Campari, Sweet Vermouth, Blood Orange' },
+      { name: 'Heated Rivalry', description: 'Hornitos Black Barrel Tequila, Cointreau, Japanese Yuzu, Lime, Agave, Fire Bitters' },
+      { name: 'Smoke & Oak', description: 'Buffalo Trace Bourbon, Licor 43, Smoked Dark Walnut Bitters, Fig & Cinnamon' },
+      { name: 'Basil Limoncello Smash', description: 'House Flavoured Basil Vodka, Luxardo Limoncello, Lemon, Sugar, Soda, Fresh Basil' },
+      { name: 'Spiced Tide', description: 'Empress Gin, Canton Ginger Liqueur, Pineapple, Lemon, Honey, Ginger Bitters' },
+      { name: 'Sun Over Sardinia', description: 'Gosling\'s Black Rum, Pineapple, Lemon, Coconut, Better Bitters' },
+      { name: 'Sicilian Negroni', description: 'Malfy Gin Con Arancia, Campari, Sweet Vermouth, Blood Orange' },
     ],
   },
   {
     category: 'Spirit-Free Cocktails',
     items: [
-      { name: 'Pisticci Punch', price: '$15', description: 'Lucano Amaro Zero, Grapefruit, Fresh Orange, Soda' },
-      { name: 'Heirloom', price: '$15', description: 'Sobrii, Kiwi Puree, House Made Lemonade, Sumac & Kiwi Bitters' },
-      { name: 'Pink Passion', price: '$15', description: 'Sobrii, Dragon Fruit, Mint, Fresh Lime, Lime Soda' },
+      { name: 'Pisticci Punch', description: 'Lucano Amaro Zero, Grapefruit, Fresh Orange, Soda' },
+      { name: 'Heirloom', description: 'Sobrii, Kiwi Puree, House Made Lemonade, Sumac & Kiwi Bitters' },
+      { name: 'Pink Passion', description: 'Sobrii, Dragon Fruit, Mint, Fresh Lime, Lime Soda' },
     ],
   },
 ];
 
 const wineSections: Section[] = [
   {
+    category: 'White \u2014 Coastal & Mineral',
+    items: [
+      { name: 'Vermentino \u2014 Cecchi La Mora (Organic)', sub: 'Sardinia, Italy' },
+      { name: 'Gavi di Gavi \u2014 Fontanafredda', sub: 'Piedmont, Italy' },
+    ],
+  },
+  {
+    category: 'White \u2014 Crisp & Refreshing',
+    items: [
+      { name: 'Riesling \u2014 Vineland Estates Elevation', sub: 'Niagara Peninsula, Ontario' },
+      { name: 'Pinot Grigio \u2014 Santa Margherita', sub: 'Alto Adige, Italy' },
+      { name: 'Sauvignon Blanc \u2014 Kim Crawford', sub: 'Marlborough, New Zealand' },
+      { name: 'Sauvignon Blanc \u2014 Hubert Brochard Sancerre', sub: 'Loire Valley, France' },
+    ],
+  },
+  {
+    category: 'White \u2014 Rich & Textured',
+    items: [
+      { name: 'Chardonnay \u2014 Louis Jadot', sub: 'Burgundy, France' },
+      { name: 'Chardonnay \u2014 Hidden Bench Estate', sub: 'Niagara Peninsula, Ontario' },
+      { name: 'Chablis "Reserve de l\'Orangerie" \u2014 Albert Bichot', sub: 'Chablis, France' },
+    ],
+  },
+  {
+    category: 'Ros\u00e9',
+    items: [
+      { name: 'C\u00f4te des Roses Ros\u00e9 \u2014 G\u00e9rard Bertrand', sub: 'Languedoc, France' },
+      { name: 'Miraval Ros\u00e9 \u2014 Ch\u00e2teau Miraval', sub: 'C\u00f4tes de Provence, France' },
+    ],
+  },
+  {
     category: 'Sparkling',
-    isWine: true,
     items: [
-      { name: 'Taittinger Brut Reserve Champagne', sub: 'Champagne, France' },
-      { name: 'Crémant de Bourgogne', sub: 'Bourgogne, France' },
       { name: 'Villa Sandi Prosecco DOC', sub: 'Veneto, Italy' },
+      { name: 'Taittinger Brut R\u00e9serve', sub: 'Champagne, France' },
+      { name: 'Dom P\u00e9rignon Brut Vintage', sub: 'Champagne, France' },
     ],
   },
   {
-    category: 'White — Crisp & Refreshing',
+    category: 'Red \u2014 Elegant & Approachable',
     items: [
-      { name: 'Santa Margherita Pinot Grigio', sub: 'Alto Adige, Italy' },
-      { name: 'Vineland Estates Elevation Riesling', sub: 'Niagara Peninsula, Ontario' },
-      { name: 'Remy Pannier Val de Loire Sauvignon Blanc', sub: 'Loire Valley, France' },
-      { name: 'Pascal Jolivet Sancerre', sub: 'Loire Valley, France' },
-      { name: 'Miraval Rosé (Seasonal Selection)', sub: 'Côtes De Provence, France' },
+      { name: 'G\u00e9rard Bertrand R\u00e9serve Sp\u00e9ciale', sub: 'Languedoc, France' },
+      { name: 'Pinot Noir \u2014 Kim Crawford', sub: 'Marlborough, New Zealand' },
+      { name: 'Chianti Classico \u2014 Ruffino', sub: 'Tuscany, Italy' },
+      { name: 'Rioja Crianza \u2014 Campo Viejo', sub: 'Rioja, Spain' },
+      { name: 'Bourgogne Pinot Noir \u2014 Louis Jadot', sub: 'Burgundy, France' },
+      { name: 'Rioja Reserva \u2014 Muga', sub: 'Rioja, Spain' },
     ],
   },
   {
-    category: 'White — Rich & Elegant',
+    category: 'Red \u2014 Earthy & Food-Driven',
     items: [
-      { name: 'J. Moreau & Fils Glorie de Chablis', sub: 'Burgundy, France' },
-      { name: 'Tormaresca Chardonnay', sub: 'Puglia, Italy' },
-      { name: 'Albert Bichot Chablis Reserve de l\'Orangerie', sub: 'Burgundy, France' },
-      { name: 'Chablis Premier Cru (John\'s Selection)', sub: 'Burgundy, France' },
+      { name: 'C\u00f4tes du Rh\u00f4ne \u2014 E. Guigal', sub: 'Rh\u00f4ne Valley, France' },
+      { name: 'Malbec \u2014 Luigi Bosca', sub: 'Mendoza, Argentina' },
+      { name: 'Ripasso Valpolicella \u2014 Tommasi', sub: 'Veneto, Italy' },
     ],
   },
   {
-    category: 'White — Mediterranean',
+    category: 'Red \u2014 Structured & Age-Worthy',
     items: [
-      { name: 'Nostos Assyrtiko', sub: 'Crete, Greece' },
-      { name: 'Santo Wines Santorini Assyrtiko', sub: 'Santorini, Greece' },
-    ],
-  },
-  {
-    category: 'Red — Smooth & Approachable',
-    items: [
-      { name: 'Campo Viejo Rioja Reserva', sub: 'Rioja, Spain' },
-      { name: 'Gérard Bertrand Languedoc Réserve', sub: 'Languedoc, France' },
-      { name: 'Ruffino Chianti Classico', sub: 'Tuscany, Italy' },
-      { name: 'Marques de Riscal Rioja Reserva', sub: 'Rioja, Spain' },
-      { name: 'Muga Rioja Reserva', sub: 'Rioja, Spain' },
-    ],
-  },
-  {
-    category: 'Red — Bold & Structured',
-    items: [
-      { name: 'J. Lohr Seven Oaks Cabernet Sauvignon', sub: 'Paso Robles, USA' },
-      { name: 'Luigi Bosca Malbec', sub: 'Mendoza, Argentina' },
-      { name: 'Famille Perrin Côtes du Rhône', sub: 'Rhône, France' },
-      { name: 'Château Argadens Bordeaux Supérieur', sub: 'Bordeaux, France' },
-    ],
-  },
-  {
-    category: 'Red — Earthy & Food-Driven',
-    items: [
-      { name: 'E. Guigal Côtes du Rhône', sub: 'Rhône, France' },
-      { name: 'Boutari Naoussa Xinomavro', sub: 'Naoussa, Greece' },
-    ],
-  },
-  {
-    category: 'Red — Feature & Premium',
-    items: [
-      { name: 'Castello di Neive Barbaresco', sub: 'Piedmont, Italy' },
-      { name: 'Fontanafredda Barolo', sub: 'Piedmont, Italy' },
-      { name: 'Louis Jadot Bourgogne Pinot Noir', sub: 'Burgundy, France' },
+      { name: 'Famille Perrin C\u00f4tes du Rh\u00f4ne R\u00e9serve', sub: 'Rh\u00f4ne Valley, France' },
+      { name: 'Cabernet Sauvignon \u2014 J. Lohr Seven Oaks', sub: 'Paso Robles, USA' },
+      { name: 'Chianti Classico Gran Selezione \u2014 Castello di Ama', sub: 'Tuscany, Italy' },
+      { name: 'Barolo \u2014 Fontanafredda', sub: 'Piedmont, Italy' },
+      { name: 'Amarone della Valpolicella Classico \u2014 Zenato', sub: 'Veneto, Italy' },
     ],
   },
   {
     category: 'From the Cellar',
     items: [
-      { name: 'Dom Pérignon', sub: 'Champagne, France' },
-      { name: 'Stag\'s Leap Wine Cellars Cabernet Sauvignon', sub: 'Napa Valley, USA' },
-      { name: 'Tenuta San Guido Guidalberto', sub: 'Tuscany, Italy' },
-      { name: 'Quinta do Crasto Touriga Nacional', sub: 'Douro Valley, Portugal' },
-      { name: 'Ascheri Barolo', sub: 'Piedmont, Italy' },
-      { name: 'Zenato Amarone della Valpolicella Classico', sub: 'Veneto, Italy' },
-      { name: 'Famille Perrin Châteauneuf-du-Pape', sub: 'Rhône Valley, France' },
-      { name: 'Hidden Bench Estate Chardonnay', sub: 'Niagara Peninsula, Ontario' },
+      { name: 'Banfi Brunello de Montalcino', sub: 'Tuscany, Italy' },
+      { name: 'Guidalberto \u2014 Tenuta San Guido', sub: 'Tuscany, Italy' },
+      { name: 'Cabernet Sauvignon \u2014 Duckhorn 2022', sub: 'Napa Valley' },
+      { name: 'Cabernet Sauvignon \u2014 Stag\'s Leap "Artemis" 2021', sub: 'Napa Valley' },
+      { name: 'Cabernet Sauvignon \u2014 Cakebread Cellars 2020', sub: 'Napa Valley' },
     ],
-    isWine: true,
+  },
+  {
+    category: 'By the Glass \u2014 5oz Pour',
+    items: [
+      { name: 'Pinot Grigio \u2014 Santa Margherita', sub: 'White' },
+      { name: 'Sauvignon Blanc \u2014 Kim Crawford', sub: 'White' },
+      { name: 'Chardonnay \u2014 Wakefield Estate Label', sub: 'White' },
+      { name: 'Villa Sandi Prosecco DOC', sub: 'Sparkling' },
+      { name: 'Miraval Ros\u00e9 \u2014 Ch\u00e2teau Miraval', sub: 'Ros\u00e9' },
+      { name: 'Chianti Classico \u2014 Ruffino', sub: 'Red' },
+      { name: 'Pinot Noir \u2014 Kim Crawford', sub: 'Red' },
+      { name: 'Malbec \u2014 Luigi Bosca', sub: 'Red' },
+      { name: 'G\u00e9rard Bertrand R\u00e9serve Sp\u00e9ciale', sub: 'Red' },
+    ],
   },
 ];
 
@@ -130,15 +139,10 @@ function DrinkSection({ section }: { section: Section }) {
       <div className="space-y-5">
         {section.items.map((item) => (
           <div key={item.name} style={{ borderBottom: '1px solid var(--color-border-subtle)', paddingBottom: '1.25rem' }}>
-            <div className="flex justify-between items-baseline mb-1">
+            <div className="mb-1">
               <span className="text-[15px] font-medium" style={{ color: 'var(--color-text-primary)', fontFamily: 'Playfair Display, serif' }}>
                 {item.name}
               </span>
-              {item.price && (
-                <span className="text-[13px] ml-4 flex-shrink-0" style={{ color: 'var(--color-accent)' }}>
-                  {item.price}
-                </span>
-              )}
             </div>
             {item.description && (
               <p className="text-[13px] leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
@@ -195,12 +199,15 @@ export default function DrinksMenuPage() {
             style={{
               fontSize: 'clamp(1.6rem, 3vw, 2.2rem)',
               lineHeight: 1.2,
-              marginBottom: '1.5rem',
+              marginBottom: '0.5rem',
               fontFamily: 'Playfair Display, serif',
             }}
           >
-            Wine Offerings
+            Wine Collection
           </h2>
+          <p className="text-[11px] tracking-[0.2em] uppercase mb-6" style={{ color: 'var(--color-text-muted)' }}>
+            Summer 2026
+          </p>
           <p
             style={{
               color: 'var(--color-text-muted)',

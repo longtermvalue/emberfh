@@ -7,31 +7,27 @@ const featuredItems = [
   {
     image: '/1061985640872727360.png',
     name: 'Stracciatella e Prosciutto',
-    price: '$26',
     description: 'Stracciatella, prosciutto di Parma, seasonal stone fruit, arugula, roasted hazelnuts, aged balsamic, EVOO',
   },
   {
     image: '/715142997249475228.png',
     name: 'Tahini Caesar',
-    price: '$19',
     description: 'Artisan greens, tahini garlic dressing, crispy chickpeas, pecorino, sumac, lemon',
   },
   {
     image: '/Adelizia.jpeg',
     name: 'A Delizia',
-    price: '$25',
     description: 'Prosciutto, mortadella, basil puree, sun-dried tomato pesto, fior di latte, arugula, balsamic reduction',
   },
   {
     image: '/1129295551161571653.png',
     name: 'Chicken Souvlaki Salad',
-    price: '$29',
     description: 'Charred souvlaki chicken, artisan greens, cucumber, tomatoes, sumac onions, feta, Kalamata olives, tzatziki',
   },
 ];
 
 type Badge = { label: string };
-type MenuItem = { name: string; price: string; description: string; badges?: Badge[] };
+type MenuItem = { name: string; description: string; badges?: Badge[] };
 type Section = { category: string; items: MenuItem[] };
 
 function DietaryBadge({ label }: { label: string }) {
@@ -56,39 +52,53 @@ function DietaryBadge({ label }: { label: string }) {
 
 const lunchSections: Section[] = [
   {
+    category: 'To Share / For the Table',
+    items: [
+      { name: 'Artisan Sourdough', description: 'Casa Pons lemon EVOO, aged balsamic', badges: [{ label: 'G' }, { label: 'VG' }] },
+      { name: 'Marinated Olives', description: 'Warm mixed olives, citrus zest, fresh herbs, Biquinho peppers', badges: [{ label: 'VG' }] },
+      { name: 'Pulpo Con Puttanesca', description: 'Charred octopus, chorizo puttanesca, Calabrian chili oil, squid ink tapioca crisp' },
+      { name: 'La Brasa Mussels', description: 'Madri lager, \'nduja, Iberico chorizo, fennel, confit tomato, lemon, charred bread', badges: [{ label: 'G' }, { label: 'SF' }] },
+      { name: 'Camarao Alhinho', description: 'Portuguese garlic shrimp, Gavi di Gavi, tomato sofrito, chili olive oil, charred bread', badges: [{ label: 'G' }, { label: 'SF' }] },
+      { name: 'Mezze Plate', description: 'Hummus, whipped feta, muhammara, grilled pita', badges: [{ label: 'G' }, { label: 'V' }, { label: 'N' }] },
+      { name: 'Black Tartufo Frites', description: 'Pommes frites, black truffle aioli, tartufo, wild mushroom ketchup, pecorino romano, chives', badges: [{ label: 'V' }, { label: 'G' }] },
+      { name: 'Hokkaido Scallops', description: 'Seared sea scallops, caviar beurre blanc, chive oil', badges: [{ label: 'SF' }, { label: 'L' }] },
+      { name: 'Burrata', description: 'Pistachio pesto, lemon EVOO, aged balsamic, grilled sourdough', badges: [{ label: 'G' }, { label: 'V' }, { label: 'N' }, { label: 'L' }] },
+    ],
+  },
+  {
     category: 'Salad',
     items: [
-      { name: 'Chicken Souvlaki Salad', price: '$29', description: 'Charred souvlaki chicken, artisan greens, cucumber, tomatoes, sumac onions, feta, Kalamata olives, tzatziki', badges: [{ label: 'GF' }] },
-      { name: 'Beet Garden', price: '$24', description: 'Roasted heirloom beets, whipped feta, pistachio dust, sumac onions, shaved radish, arugula, truffle honey, Casa Pons lemon EVOO', badges: [{ label: 'V' }, { label: 'GF' }] },
-      { name: 'Stracciatella e Prosciutto', price: '$26', description: 'Stracciatella, prosciutto di Parma, seasonal stone fruit, arugula, roasted hazelnuts, aged balsamic, EVOO', badges: [{ label: 'GF' }] },
-      { name: 'Tahini Caesar', price: '$19', description: 'Artisan greens, tahini garlic dressing, crispy chickpeas, pecorino, sumac, lemon', badges: [{ label: 'V' }] },
+      { name: 'Chicken Souvlaki', description: 'Charred souvlaki chicken, artisan greens, cucumber, tomatoes, sumac onions, feta, Kalamata olives, tzatziki', badges: [{ label: 'L' }] },
+      { name: 'Beet Garden', description: 'Roasted heirloom beets, whipped feta, pistachio dust, sumac onions, shaved radish, arugula, truffle honey, Casa Pons lemon EVOO', badges: [{ label: 'V' }, { label: 'L' }, { label: 'N' }] },
+      { name: 'Stracciatella e Prosciutto', description: 'Stracciatella, prosciutto di Parma, seasonal stone fruit, arugula, roasted hazelnuts, aged balsamic, EVOO', badges: [{ label: 'L' }, { label: 'N' }] },
+      { name: 'Tahini Caesar', description: 'Artisan greens, tahini garlic dressing, crispy chickpeas, pecorino, sumac, lemon', badges: [{ label: 'V' }, { label: 'L' }] },
     ],
   },
   {
     category: 'Sandwich',
     items: [
-      { name: 'A Delizia', price: '$25', description: 'Prosciutto, mortadella, basil purée, sun-dried tomato pesto, fior di latte, arugula, balsamic reduction' },
-      { name: 'Il Mortadella', price: '$24', description: 'Mortadella, pistacchio crema, stracciatella, arugula' },
-      { name: 'La Mediterranea', price: '$21', description: 'Muhammara, charred zucchini, roasted red peppers, marinated artichoke, basil purée, arugula, aged balsamic', badges: [{ label: 'VG' }] },
-      { name: 'Spicy Charcuterie', price: '$24', description: 'Prosciutto, capicola, fior di latte, Calabrian chili & roasted tomato pesto, arugula, hot honey' },
-      { name: 'Il Tartufo', price: '$23', description: 'Roasted wild mushrooms, whipped lemon ricotta, arugula, black truffle cream, truffle honey', badges: [{ label: 'V' }] },
-      { name: 'Frango Na Brasa', price: '$24', description: 'Charred Portuguese chicken, piquillo peppers, chimichurri, piri-piri sauce, arugula' },
-      { name: 'Le Canard', price: '$27', description: 'Duck confit, whipped lemon ricotta, caramelized onion chutney, arugula, duck crackling, black truffle cream' },
+      { name: 'A Delizia', description: 'Prosciutto, mortadella, basil puree, sun-dried tomato pesto, fior di latte, arugula, balsamic reduction', badges: [{ label: 'G' }, { label: 'L' }] },
+      { name: 'Il Mortadella', description: 'Mortadella, pistacchio crema, stracciatella, arugula', badges: [{ label: 'G' }, { label: 'L' }, { label: 'N' }] },
+      { name: 'La Mediterranea', description: 'Muhammara, charred zucchini, roasted red peppers, marinated artichoke, basil puree, arugula, aged balsamic', badges: [{ label: 'VG' }, { label: 'G' }, { label: 'N' }] },
+      { name: 'Spicy Charcuterie', description: 'Prosciutto, capicola, fior di latte, Calabrian chili & roasted tomato pesto, arugula, hot honey', badges: [{ label: 'G' }, { label: 'L' }] },
+      { name: 'Il Tartufo', description: 'Roasted wild mushrooms, whipped lemon ricotta, arugula, black truffle cream, truffle honey', badges: [{ label: 'V' }, { label: 'G' }, { label: 'L' }] },
+      { name: 'Frango Na Brasa', description: 'Charred Portuguese chicken, piquillo peppers, chimichurri, piri-piri sauce, arugula', badges: [{ label: 'G' }] },
+      { name: 'Le Canard', description: 'Duck confit, whipped lemon ricotta, caramelized onion chutney, arugula, duck crackling, black truffle cream', badges: [{ label: 'G' }, { label: 'L' }] },
     ],
   },
   {
     category: 'Fresh Pasta',
     items: [
-      { name: 'Spaghetti Al Tartufo', price: '$24', description: 'Wild mushrooms, black truffle cream, white wine, chives, Grana Padano', badges: [{ label: 'V' }] },
-      { name: 'Wagyu Bolognese', price: '$26', description: 'Slow-simmered wagyu beef ragù, whipped lemon ricotta, pangrattato, basil, Grana Padano' },
-      { name: 'Carbonara', price: '$24', description: 'Pancetta, egg yolk, black pepper, Grana Padano, cream' },
-      { name: 'Spaghetti All\'Arrabbiata', price: '$23', description: 'Pomodoro, roasted cherry tomatoes, Calabrian chili oil, Grana Padano', badges: [{ label: 'VG' }] },
-      { name: 'Spaghetti Alla Vodka', price: '$21', description: 'Tomato cream, vodka, chili, chives, Grana Padano', badges: [{ label: 'V' }] },
+      { name: 'Spaghetti Al Tartufo', description: 'Wild mushrooms, black truffle cream, white wine, chives, Grana Padano', badges: [{ label: 'V' }, { label: 'G' }, { label: 'L' }] },
+      { name: 'Wagyu Bolognese', description: 'Slow-simmered wagyu beef ragu, whipped lemon ricotta, pangrattato, basil, Grana Padano', badges: [{ label: 'G' }, { label: 'L' }] },
+      { name: 'Carbonara', description: 'Pancetta, egg yolk, black pepper, Grana Padano, cream', badges: [{ label: 'G' }, { label: 'L' }] },
+      { name: "Spaghetti All'Arrabbiata", description: 'Pomodoro, roasted cherry tomatoes, Calabrian chili oil, Grana Padano', badges: [{ label: 'V' }, { label: 'G' }, { label: 'L' }] },
+      { name: 'Spaghetti Alla Vodka', description: 'Tomato cream, vodka, chili, chives, Grana Padano', badges: [{ label: 'V' }, { label: 'G' }, { label: 'L' }] },
     ],
   },
 ];
 
-const menuFooterNote = `Plus applicable tax and 3% resort fee as per resort management. Please address any known allergies or dietary restrictions with your server including Gluten-Free intolerances.`;
+const menuFooterNote = `*All groups of 8 or more are subject to an automatic 20% gratuity. Plus applicable tax and 3% resort fee as per resort management. Please address any known allergies or dietary restrictions with your server including Gluten-Free intolerances.`;
 
 export default function LunchMenu() {
   return (
@@ -110,14 +120,9 @@ export default function LunchMenu() {
                 <img src={item.image} alt={item.name} className="w-full h-full object-cover" loading="lazy" />
               </div>
               <div className="p-6">
-                <div className="flex items-start justify-between mb-2">
-                  <h3 style={{ fontSize: '18px', fontFamily: 'Playfair Display, serif', color: 'var(--color-text-primary)', fontWeight: 400 }}>
-                    {item.name}
-                  </h3>
-                  <span style={{ fontSize: '14px', color: 'var(--color-accent)', marginLeft: '12px', flexShrink: 0 }}>
-                    {item.price}
-                  </span>
-                </div>
+                <h3 className="mb-2" style={{ fontSize: '18px', fontFamily: 'Playfair Display, serif', color: 'var(--color-text-primary)', fontWeight: 400 }}>
+                  {item.name}
+                </h3>
                 <p style={{ fontSize: '13px', lineHeight: 1.6, color: 'var(--color-text-muted)' }}>
                   {item.description}
                 </p>
@@ -141,13 +146,10 @@ export default function LunchMenu() {
               <div className="space-y-6">
                 {section.items.map((item) => (
                   <div key={item.name} style={{ borderBottom: '1px solid var(--color-border-subtle)', paddingBottom: '1.25rem' }}>
-                    <div className="flex justify-between items-baseline mb-1">
+                    <div className="mb-1">
                       <span className="text-[15px] font-medium" style={{ color: 'var(--color-text-primary)', fontFamily: 'Playfair Display, serif' }}>
                         {item.name}
                         {item.badges?.map((b) => <DietaryBadge key={b.label} label={b.label} />)}
-                      </span>
-                      <span className="text-[14px] ml-4 flex-shrink-0" style={{ color: 'var(--color-accent)' }}>
-                        {item.price}
                       </span>
                     </div>
                     <p className="text-[13px] leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>

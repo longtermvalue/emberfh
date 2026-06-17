@@ -85,7 +85,7 @@ export default function ChophouseMenu() {
             borderRadius: '4px',
             marginTop: '20px',
             marginBottom: '48px',
-            height: '320px',
+            minHeight: '280px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -119,7 +119,7 @@ export default function ChophouseMenu() {
                 letterSpacing: '0.35em',
                 color: 'var(--color-accent)',
                 fontFamily: 'DM Sans, sans-serif',
-                marginBottom: '1rem',
+                marginBottom: '0.6rem',
               }}
             >
               The Chophouse Experience
@@ -131,7 +131,7 @@ export default function ChophouseMenu() {
                 lineHeight: 1.1,
                 fontWeight: 400,
                 color: '#f5f0eb',
-                marginBottom: '1rem',
+                marginBottom: '0.75rem',
               }}
             >
               Now Open
@@ -139,7 +139,7 @@ export default function ChophouseMenu() {
             <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', maxWidth: '680px', margin: '0 auto', lineHeight: 1.7 }}>
               Ember's Chophouse is an upscale casual dining destination dedicated to the art of fire, featuring premium aged chops, fresh seafood, and daily chef-inspired features. Set against the stunning backdrop of Friday Harbour on the shores of Lake Simcoe, Ember delivers an elevated dining experience where exceptional food, warm hospitality, and waterfront views come together.
             </p>
-            <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '13px', maxWidth: '620px', margin: '1rem auto 0', lineHeight: 1.7 }}>
+            <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '13px', maxWidth: '620px', margin: '0.65rem auto 0', lineHeight: 1.7 }}>
               Join us Friday and Saturday evenings from 5:00 PM to 9:30 PM for a refined dining experience. While Ember is proud to be a welcoming destination for all guests, during these evening service hours we respectfully maintain a 14+ environment to ensure a relaxed and enjoyable atmosphere for our diners.
             </p>
           </div>

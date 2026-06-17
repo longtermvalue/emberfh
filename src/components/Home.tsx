@@ -535,7 +535,7 @@ export default function Home() {
                 Sunday Brunch at Ember
               </h2>
               <p style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)', color: 'var(--color-accent)', fontFamily: 'Playfair Display, serif', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: 1.4 }}>
-                Coming Summer 2026
+                Coming Later Summer 2026
               </p>
               <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
                 A new kind of Sunday is coming. This isn't your traditional brunch - this is brunch, the Ember way. Fresh, vibrant, and built around Mediterranean flavour.

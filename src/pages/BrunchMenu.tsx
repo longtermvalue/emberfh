@@ -85,7 +85,7 @@ export default function BrunchMenu() {
                 marginBottom: '1rem',
               }}
             >
-              Coming Summer 2026
+              Coming Later Summer 2026
             </h2>
 
             <div

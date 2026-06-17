@@ -141,7 +141,7 @@ export default function DinnerMenu() {
 
         <div className="mb-10 pb-6" style={{ borderBottom: '1px solid var(--color-border-subtle)' }}>
           <p style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.2em', color: 'var(--color-accent)', fontFamily: 'DM Sans, sans-serif' }}>
-            Served 5:00PM - 9:30PM
+            Dinner - Sun–Thu 5:00 PM – 9:00 PM | Fri–Sat 5:00 PM – 11:00 PM
           </p>
         </div>
 

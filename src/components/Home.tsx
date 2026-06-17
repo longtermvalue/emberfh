@@ -390,7 +390,7 @@ export default function Home() {
                 Lunch
               </h2>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                Friday – Sunday, 12pm – Late
+                Daily, 12:00 PM – 3:00 PM
               </p>
               <p style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)', color: 'var(--color-accent)', fontFamily: 'Playfair Display, serif', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: 1.4 }}>
                 Fired by Flavour
@@ -440,7 +440,7 @@ export default function Home() {
                 Dinner
               </h2>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                Wednesday – Thursday, 5pm – Close
+                Daily, 5:00 PM – Close
               </p>
               <p style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)', color: 'var(--color-accent)', fontFamily: 'Playfair Display, serif', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: 1.4 }}>
                 Mediterranean Inspired
@@ -751,14 +751,14 @@ export default function Home() {
             </div>
 
             <div className="mt-6 space-y-2" style={{ borderTop: '1px solid var(--color-border-subtle)', paddingTop: '1.5rem' }}>
-              <p className="text-[11px] tracking-[0.25em] uppercase font-medium mb-3" style={{ color: 'var(--color-accent)' }}>Hours</p>
+              <p className="text-[11px] tracking-[0.25em] uppercase font-medium mb-3" style={{ color: 'var(--color-accent)' }}>Summer Hours</p>
               <div className="text-[14px] space-y-1.5" style={{ color: 'var(--color-text-muted)' }}>
-                <p><span style={{ color: 'var(--color-text-primary)' }}>Mon – Tue:</span> Closed</p>
-                <p><span style={{ color: 'var(--color-text-primary)' }}>Wednesday:</span> 5:00pm - 9:00pm</p>
-                <p><span style={{ color: 'var(--color-text-primary)' }}>Thursday:</span> 5:00pm - 10:00pm</p>
-                <p><span style={{ color: 'var(--color-text-primary)' }}>Fri – Sat:</span> 12:00pm - Late</p>
-                <p><span style={{ color: 'var(--color-text-primary)' }}>Sunday:</span> 12:00pm - 9:00pm</p>
-                <p style={{ fontSize: '12px', fontStyle: 'italic', marginTop: '4px' }}>Hours subject to change seasonally & on holiday weekends.</p>
+                <p className="text-[11px] uppercase tracking-wider font-medium" style={{ color: 'var(--color-accent)', marginBottom: '2px' }}>Lunch</p>
+                <p><span style={{ color: 'var(--color-text-primary)' }}>Daily:</span> 12:00 PM - 3:00 PM</p>
+                <p className="text-[11px] uppercase tracking-wider font-medium" style={{ color: 'var(--color-accent)', marginTop: '8px', marginBottom: '2px' }}>Dinner</p>
+                <p><span style={{ color: 'var(--color-text-primary)' }}>Sun – Thu:</span> 5:00 PM - 9:00 PM</p>
+                <p><span style={{ color: 'var(--color-text-primary)' }}>Fri – Sat:</span> 5:00 PM - 11:00 PM</p>
+                <p style={{ fontSize: '12px', fontStyle: 'italic', marginTop: '4px' }}>Subject to change due to Stat Holidays.</p>
               </div>
             </div>
 

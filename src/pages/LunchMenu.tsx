@@ -128,7 +128,7 @@ export default function LunchMenu() {
 
         <div className="mb-10 pb-6" style={{ borderBottom: '1px solid var(--color-border-subtle)' }}>
           <p style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.2em', color: 'var(--color-accent)', fontFamily: 'DM Sans, sans-serif' }}>
-            LUNCH - Friday – Sunday 12:00pm to 4:00pm
+            LUNCH - Daily 12:00 PM to 3:00 PM
           </p>
         </div>
 

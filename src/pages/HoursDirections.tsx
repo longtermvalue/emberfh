@@ -5,12 +5,13 @@ const RESERVATION_URL = 'https://www.opentable.ca/r/ember-reservations-innisfil?
 const MAPS_URL = 'https://maps.app.goo.gl/EfgvJpAkTF2ETsff6';
 const MAP_EMBED_SRC = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2844.5!2d-79.5334052!3d44.3935775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882aafb396164761%3A0x9d817a3d1cc7ca87!2sEmber%20(Friday%20Harbour%20Resort)!5e0!3m2!1sen!2sca!4v1';
 
-const weeklyHours = [
-  { day: 'Monday – Tuesday', time: 'Closed', closed: true },
-  { day: 'Wednesday', time: '5:00pm – 9:00pm' },
-  { day: 'Thursday', time: '5:00pm – 10:00pm' },
-  { day: 'Friday – Saturday', time: '12:00pm – Late' },
-  { day: 'Sunday', time: '12:00pm – 9:00pm' },
+const lunchHours = [
+  { day: 'Daily', time: '12:00 PM – 3:00 PM' },
+];
+
+const dinnerHours = [
+  { day: 'Sunday – Thursday', time: '5:00 PM – 9:00 PM' },
+  { day: 'Friday & Saturday', time: '5:00 PM – 11:00 PM' },
 ];
 
 const directions = [
@@ -58,11 +59,14 @@ export default function HoursDirections() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
           <div>
             <h2 className="mb-8" style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)', lineHeight: 1.2 }}>
-              Hours
+              Summer Hours
             </h2>
-            <HoursBlock rows={weeklyHours} />
+            <h3 className="text-[11px] tracking-[0.2em] uppercase font-medium mb-3" style={{ color: 'var(--color-accent)' }}>Lunch</h3>
+            <HoursBlock rows={lunchHours} />
+            <h3 className="text-[11px] tracking-[0.2em] uppercase font-medium mb-3 mt-6" style={{ color: 'var(--color-accent)' }}>Dinner</h3>
+            <HoursBlock rows={dinnerHours} />
             <p className="mt-4 text-[12px] italic" style={{ color: 'var(--color-text-muted)' }}>
-              Hours are subject to change seasonally and on holiday weekends. Check our social media or call ahead to confirm.
+              Subject to change due to Stat Holidays. Visit website for any updates.
             </p>
           </div>
 

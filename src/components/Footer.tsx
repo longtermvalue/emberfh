@@ -63,15 +63,15 @@ export default function Footer() {
 
           <div>
             <p className="text-[11px] tracking-[0.3em] uppercase mb-5 font-medium" style={{ color: 'var(--color-accent)' }}>
-              Hours
+              Summer Hours
             </p>
             <div className="space-y-2 text-[13px]" style={{ color: 'rgba(255,255,255,0.6)' }}>
-              <p>Mon – Tue: Closed</p>
-              <p>Wed: 5:00pm - 9:00pm</p>
-              <p>Thu: 5:00pm - 10:00pm</p>
-              <p>Fri – Sat: 12:00pm - Late</p>
-              <p>Sun: 12:00pm - 9:00pm</p>
-              <p style={{ fontSize: '11px', fontStyle: 'italic', color: 'rgba(255,255,255,0.4)', marginTop: '4px' }}>Hours subject to change seasonally & on holiday weekends.</p>
+              <p style={{ color: 'var(--color-accent)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '2px' }}>Lunch</p>
+              <p>Daily: 12:00 PM - 3:00 PM</p>
+              <p style={{ color: 'var(--color-accent)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', marginTop: '8px', marginBottom: '2px' }}>Dinner</p>
+              <p>Sun – Thu: 5:00 PM - 9:00 PM</p>
+              <p>Fri – Sat: 5:00 PM - 11:00 PM</p>
+              <p style={{ fontSize: '11px', fontStyle: 'italic', color: 'rgba(255,255,255,0.4)', marginTop: '4px' }}>Subject to change due to Stat Holidays.</p>
             </div>
           </div>
 
